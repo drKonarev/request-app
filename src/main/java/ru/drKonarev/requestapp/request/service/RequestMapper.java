@@ -1,7 +1,10 @@
-package ru.drKonarev.requestapp.request;
+package ru.drKonarev.requestapp.request.service;
 
 import org.springframework.stereotype.Component;
-import ru.drKonarev.requestapp.user.User;
+import ru.drKonarev.requestapp.request.dto.RequestDto;
+import ru.drKonarev.requestapp.request.dto.RequestOperatorDto;
+import ru.drKonarev.requestapp.request.model.Request;
+import ru.drKonarev.requestapp.user.model.User;
 
 @Component
 public class RequestMapper {
@@ -23,7 +26,7 @@ public class RequestMapper {
     String descToDesc(String desc) {
         String result = "";
         for (int i = 0; i < desc.length(); i++) {
-            result += desc.substring(i, i + 1) + "-";
+            result += desc.charAt(i) + "-";
         }
         return result;
     }
@@ -36,7 +39,7 @@ public class RequestMapper {
                 requestDto.getStatus());
     }
 
-    Request patch (Request request, RequestDto requestDto){
+    Request patch(Request request, RequestDto requestDto) {
         return new Request(request.getId(),
                 requestDto.getDescription(),
                 request.getOwner(),

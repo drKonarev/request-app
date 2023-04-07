@@ -1,12 +1,17 @@
-package ru.drKonarev.requestapp.request;
+package ru.drKonarev.requestapp.request.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import ru.drKonarev.requestapp.user.User;
-import ru.drKonarev.requestapp.user.UserRepository;
+import ru.drKonarev.requestapp.request.Status;
+import ru.drKonarev.requestapp.request.dao.RequestRepository;
+import ru.drKonarev.requestapp.request.dto.RequestDto;
+import ru.drKonarev.requestapp.request.dto.RequestOperatorDto;
+import ru.drKonarev.requestapp.request.model.Request;
+import ru.drKonarev.requestapp.user.dao.UserRepository;
+import ru.drKonarev.requestapp.user.model.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -62,14 +67,14 @@ public class RequestServiceImpl implements RequestService {
 
     @Override
     public RequestOperatorDto changeStatusRequestByOperator(Long requestId, Boolean status) {
-        Optional <Request> request = requestRepository.findById(requestId);
+        Optional<Request> request = requestRepository.findById(requestId);
         if (request.isEmpty()) throw new RuntimeException("Request not found");
         if (!request.get().getStatus().equals(Status.SENT)) throw new IllegalStateException("Cannot change status");
         if (status) {
             request.get().setStatus(Status.ACCEPTED);
-        }else {
+        } else {
             request.get().setStatus(Status.REJECTED);
-        };
+        }
         return requestMapper.toOperator(requestRepository.save(request.get()));
     }
 

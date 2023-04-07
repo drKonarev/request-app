@@ -1,6 +1,6 @@
-package ru.drKonarev.requestapp.user;
+package ru.drKonarev.requestapp.user.service;
 
-import org.springframework.data.domain.Sort;
+import ru.drKonarev.requestapp.user.dto.UserDto;
 
 import java.util.List;
 

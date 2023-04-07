@@ -1,14 +1,14 @@
-package ru.drKonarev.requestapp.user;
+package ru.drKonarev.requestapp.user.model;
 
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import ru.drKonarev.requestapp.user.Roles;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Set;
 
 
@@ -32,11 +32,11 @@ public class User implements UserDetails {
     @Email(message = "Wrong email format!")
     private String email;
 
-   @ElementCollection(targetClass = Roles.class, fetch = FetchType.EAGER)
-   @CollectionTable(name = "user_role",
-   joinColumns = @JoinColumn(name = "user_id"))
-   @Enumerated(EnumType.STRING)
-   private Set<Roles> roles;
+    @ElementCollection(targetClass = Roles.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"))
+    @Enumerated(EnumType.STRING)
+    private Set<Roles> roles;
 
     @Column(name = "password", nullable = false, length = 100)
     private String password;

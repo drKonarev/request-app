@@ -3,6 +3,8 @@ package ru.drKonarev.requestapp.user;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
+import ru.drKonarev.requestapp.user.dto.UserDto;
+import ru.drKonarev.requestapp.user.service.UserService;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

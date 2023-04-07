@@ -4,6 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
+import ru.drKonarev.requestapp.request.dto.RequestDto;
+import ru.drKonarev.requestapp.request.dto.RequestOperatorDto;
+import ru.drKonarev.requestapp.request.service.RequestService;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

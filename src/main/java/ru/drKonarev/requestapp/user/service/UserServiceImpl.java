@@ -1,9 +1,13 @@
-package ru.drKonarev.requestapp.user;
+package ru.drKonarev.requestapp.user.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import ru.drKonarev.requestapp.user.Roles;
+import ru.drKonarev.requestapp.user.dao.UserRepository;
+import ru.drKonarev.requestapp.user.dto.UserDto;
+import ru.drKonarev.requestapp.user.model.User;
 
 import java.util.List;
 import java.util.Optional;

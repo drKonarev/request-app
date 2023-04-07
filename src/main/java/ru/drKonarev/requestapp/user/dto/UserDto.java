@@ -1,10 +1,10 @@
-package ru.drKonarev.requestapp.user;
+package ru.drKonarev.requestapp.user.dto;
 
 import lombok.*;
 import ru.drKonarev.requestapp.markers.Create;
 import ru.drKonarev.requestapp.markers.Update;
+import ru.drKonarev.requestapp.user.Roles;
 
-import javax.management.relation.Role;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

@@ -1,8 +1,9 @@
-package ru.drKonarev.requestapp.request;
+package ru.drKonarev.requestapp.request.model;
 
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
-import ru.drKonarev.requestapp.user.User;
+import ru.drKonarev.requestapp.request.Status;
+import ru.drKonarev.requestapp.user.model.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

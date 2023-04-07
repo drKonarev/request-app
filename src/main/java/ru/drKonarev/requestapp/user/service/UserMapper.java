@@ -1,7 +1,9 @@
-package ru.drKonarev.requestapp.user;
+package ru.drKonarev.requestapp.user.service;
 
 
 import org.springframework.stereotype.Component;
+import ru.drKonarev.requestapp.user.dto.UserDto;
+import ru.drKonarev.requestapp.user.model.User;
 
 @Component
 public class UserMapper {

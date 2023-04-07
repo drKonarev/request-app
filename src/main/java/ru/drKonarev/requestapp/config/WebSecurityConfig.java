@@ -34,14 +34,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/users").hasRole("ADMIN")
                 .antMatchers("/requests/post", "/requests/all",
-                        "/requests/send","/requests/update").hasRole("USER")
+                        "/requests/send", "/requests/update").hasRole("USER")
                 .antMatchers("/requests/", "requests/search").hasRole("OPERATOR")
                 .and()
                 .formLogin();
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
 }

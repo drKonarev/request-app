@@ -1,4 +1,4 @@
-package ru.drKonarev.requestapp.request;
+package ru.drKonarev.requestapp.request.dto;
 
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -14,20 +14,16 @@ import java.time.LocalDateTime;
 @ToString
 @Getter
 @Setter
-public class RequestDto {
+public class RequestOperatorDto {
 
     private Long id;
-    @NotNull(groups = {Create.class, Update.class})
-    private Long ownerId;
+
 
     @NotNull(groups = {Create.class, Update.class})
     @NotBlank(groups = {Create.class, Update.class})
     private String description;
 
     @DateTimeFormat(pattern = "yyyy/MM/dd hh:mm:ss")
-    private LocalDateTime created = LocalDateTime.now();
+    private LocalDateTime created;
 
-    @NotNull(groups = {Create.class, Update.class})
-    @NotBlank(groups = {Create.class, Update.class})
-   private Status status;
 }
