@@ -1,0 +1,29 @@
+package ru.drKonarev.requestapp.request;
+
+import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
+import ru.drKonarev.requestapp.markers.Create;
+import ru.drKonarev.requestapp.markers.Update;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Getter
+@Setter
+public class RequestOperatorDto {
+
+    private Long id;
+
+
+    @NotNull(groups = {Create.class, Update.class})
+    @NotBlank(groups = {Create.class, Update.class})
+    private String description;
+
+    @DateTimeFormat(pattern = "yyyy/MM/dd hh:mm:ss")
+    private LocalDateTime created;
+
+}
